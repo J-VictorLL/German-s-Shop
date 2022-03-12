@@ -27,10 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
+    'geo.apps.GeoConfig',
     'cadastro.apps.CadastroConfig',
     'django.contrib.admin',
     'django.contrib.auth',
