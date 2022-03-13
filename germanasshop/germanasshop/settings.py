@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'geo.apps.GeoConfig',
-    'cadastro.apps.CadastroConfig',
+    'cliente.apps.ClienteConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
