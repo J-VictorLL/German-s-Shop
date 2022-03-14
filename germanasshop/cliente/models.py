@@ -32,3 +32,8 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.nome
+
+    def get_all_clients(self):
+        return self.objects.all()
+    def get_client_by_id(self, client_id):
+        return self.objects.get(id=client_id)

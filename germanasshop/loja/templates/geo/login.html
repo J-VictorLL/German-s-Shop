@@ -20,7 +20,7 @@ border:0;">
     <div style="width: 100%; align-items: center; justify-content: center; display: flex; flex-direction: column;">
         <h1 style="font-family:Arial; font: weight 600px; font-size:20px;">Login do Cliente</h1>
         <div style="width: 300px; background-color: #FFF; align-items: center; text-align: left;">
-            <form action="{% url 'cadastro:cadastro' %}" method="post">
+            <form action="post">
                 {% csrf_token %}
                 <p style="font-family:Arial; font: weight 500px; font-size:18px;">E-mail</p>
                 <input type="text" name="nome" id="nome" style="font-family:Arial; font: weight 500px; width: 100%; font-size:15px; background-color: #FFC8CA; border-width: 0px; height: 25px;" width="100%" placeholder="Digite seu e-mail">
@@ -42,7 +42,7 @@ border:0;">
                 font-size: 20px;">
             </form>
         </div> 
-        <p style="font-family:Arial; font: weight 500px; font-size:18px;">Não tem cadastro? <a href="">Cadastre-se</a></p>
+        <p style="font-family:Arial; font: weight 500px; font-size:18px;">Não tem cadastro? <a href="http://localhost:8000/cliente/cadastro">Cadastre-se</a></p>
     </div>
 </body>
 

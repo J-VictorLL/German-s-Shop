@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'geo.apps.GeoConfig',
+    'loja.apps.LojaConfig',
     'cliente.apps.ClienteConfig',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -23,29 +23,29 @@
                 {% csrf_token %}
                 <div class="formField">
                     <label>Nome completo</label>
-                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome">
+                    <input type="text" required="true" name="nome" id="nome" placeholder="Digite seu nome">
                 </div>
                 <div class="formField">
                     <label>CPF</label>
-                    <input type="text" name="cpf" id="cpf"  placeholder="Digite seu CPF">
+                    <input type="text" required="true" name="cpf" id="cpf"  placeholder="Digite seu CPF">
                 </div>
                 <div class="formField">
                     <label>E-mail</label>
-                    <input type="email" name="email" id="email"  placeholder="Digite seu e-mail">
+                    <input type="email"  required="true" name="email" id="email"  placeholder="Digite seu e-mail">
                 </div>
                 <div class="formField">
                     <label>Senha</label>
-                    <input type="password" name="senha" id="senha"  placeholder="Digite sua senha">
+                    <input type="password"  required="true" name="senha" id="senha"  placeholder="Digite sua senha">
                 </div>
                 <div class="formField">
                     <label>Confirmar senha</label>
-                    <input type="password" name="confirmar" id="confirmar" placeholder="Digite novamente a sua senha"> <br>
+                    <input type="password" required="true"  name="confirmar" id="confirmar" placeholder="Digite novamente a sua senha"> <br>
                 </div>
                 <input type="submit" value="Continuar">
             </form>
         </div>
         <div class="fazerLogin">
-            <p>Já tem cadastro?<a href="/cadastro/login/"> Faça login</a></p>
+            <p>Já tem cadastro?<a href="http://localhost:8000/login"> Faça login</a></p>
         </div>
     </div>
 </body>
