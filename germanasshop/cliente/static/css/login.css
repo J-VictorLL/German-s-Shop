@@ -1,0 +1,96 @@
+body{
+    margin: 0px;
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+}
+
+#logo{
+    height: 80px;
+}
+
+#direita{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container-form{
+    height: 450px;
+    width: 380px;
+    background-color: #FFC8CA;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+#container-form h1{
+    font-family: 'Dosis', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    color: black;
+}
+
+.campo-formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.campo-formulario label{
+    font-family: 'Dosis', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.campo-formulario input{
+    font-family: 'Dosis', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    border-radius: 5px;
+    height: 30px;
+    width: 300px;
+    border: none;
+    padding: 2px;
+    padding-left: 10px;
+}
+
+#botao{
+    background-color: #F9595F; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center; 
+    text-decoration: none; 
+    border-radius: 8px; 
+    width: 100%; 
+    font-size: 20px
+}
+
+.textinho{
+    font-family: 'Dosis', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+}

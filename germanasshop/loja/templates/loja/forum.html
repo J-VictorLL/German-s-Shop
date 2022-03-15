@@ -1,37 +1,53 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        {%load static%}
-        <link rel="stylesheet" href="{% static 'css/forum.css' %}">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
-        </style>
-        <title>
-            Germana's Shop
-        </title>
-    </head>
-    <body>
-        <div id="Barra">
-            <img id="logo" src="{% static 'img/Logo.png' %}" alt="">
-            <img id="cesta" src="{% static 'img/cesta.png' %}" alt="">
-            <img id="usuario" src="{% static 'img/usuario.png' %}" alt="">
-            <img id="forum" src="{% static 'img/Forum.png' %}" alt="">
+
+<head>
+    <meta charset="UTF-8">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/forum.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+    </style>
+    <title>
+        Germana's Shop
+    </title>
+</head>
+
+<body>
+    <div id="barra">
+
+        <img id="logo" src="{% static 'img/Logo.png' %}" alt="">
+
+        <div id="opcoes">
+            <a href="{% url 'cliente:cadastro' %}">
+                <img id="usuario" src="{% static 'img/usuario.png' %}" alt="">
+            </a>
+            <a href="/forum/">
+                <img id="forum" src="{% static 'img/Forum.png' %}" alt="">
+            </a>
+            <a href="/cesta/">
+                <img id="cesta" src="{% static 'img/cesta.png' %}" alt="">
+            </a>
         </div>
-        <div id="questionario">
-            <h1>Qual a sua reclamação/sugestão?</h1>
-            <textarea id="pergunta" type="text" name="pergunta" placeholder="Conte-no sobre..."></textarea> <br>
-            <button id="enviar">Enviar</button>
-        </div>
-        <hr>
-        <div id="perguntas_e_respostas">
-            <div id="item">
-                <h2>pergunta</h2>
-                <h3>feita dia 22/22/2222</h3>
-                <div id="campo">
-                    <p>responta sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-                    <h3 style="margin-left: 10px;padding: 10px;">respondido dia 23/22/2222</h3>
-                </div>
+
+    </div>
+    <div id="questionario">
+        <h1>Qual a sua reclamação/sugestão?</h1>
+        <textarea id="pergunta" type="text" name="pergunta" placeholder="Conte-no sobre..."></textarea> <br>
+        <button id="enviar">Enviar</button>
+    </div>
+    <hr>
+    <div id="perguntas_e_respostas">
+        <div id="item">
+            <h2>pergunta</h2>
+            <h3>feita dia 22/22/2222</h3>
+            <div id="campo">
+                <p>responta
+                    sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+                </p>
+                <h3 style="margin-left: 10px;padding: 10px;">respondido dia 23/22/2222</h3>
             </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

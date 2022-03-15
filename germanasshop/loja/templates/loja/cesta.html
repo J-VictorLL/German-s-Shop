@@ -11,11 +11,22 @@
         </title>
     </head>
     <body>
-        <div id="Barra">
+        <div id="barra">
+
             <img id="logo" src="{% static 'img/Logo.png' %}" alt="">
-            <img id="cesta" src="{% static 'img/cesta.png' %}" alt="">
-            <img id="usuario" src="{% static 'img/usuario.png' %}" alt="">
-            <img id="forum" src="{% static 'img/Forum.png' %}" alt="">
+    
+            <div id="opcoes">
+                <a href="{% url 'cliente:cadastro' %}">
+                    <img id="usuario" src="{% static 'img/usuario.png' %}" alt="">
+                </a>
+                <a href="/forum/">
+                    <img id="forum" src="{% static 'img/Forum.png' %}" alt="">
+                </a>
+                <a href="/cesta/">
+                    <img id="cesta" src="{% static 'img/cesta.png' %}" alt="">
+                </a>
+            </div>
+    
         </div>
         <h1>Minha cesta</h1>
         <div>

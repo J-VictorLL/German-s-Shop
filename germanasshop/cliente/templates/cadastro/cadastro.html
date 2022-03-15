@@ -1,52 +1,54 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
 </head>
+
 <body>
-    <div id="navbar">
-        <div>
-            <img src="https://images.vexels.com/media/users/3/200058/isolated/lists/faf7d0a5f261efe8d8656e9931d16ce3-icone-de-sacola-de-compras-rosa.png">
-        </div>
-        <p>Germana's Shop</p>
-    </div>
-    <div class="formGroup">
-        <h1>Crie seu cadastro</h1>
-        <div class="form">
-            <form  method="post">
+
+    <div id="container-form">
+        <img id="logo" src="{% static 'img/logo-login.png' %}" alt="">
+        <h1 class="titulo">Crie seu cadastro</h1>
+        <div class="formulario">
+            <form method="post">
                 {% csrf_token %}
-                <div class="formField">
+                <div class="campo-formulario">
                     <label>Nome completo</label>
-                    <input type="text" required="true" name="nome" id="nome" placeholder="Digite seu nome">
+                    <input type="text" required="true" name="nome" id="nome" placeholder="Digite seu nome completo">
                 </div>
-                <div class="formField">
+                <div class="campo-formulario">
                     <label>CPF</label>
-                    <input type="text" required="true" name="cpf" id="cpf"  placeholder="Digite seu CPF">
+                    <input type="text" required="true" name="cpf" id="cpf" placeholder="Digite seu CPF">
                 </div>
-                <div class="formField">
+                <div class="campo-formulario">
                     <label>E-mail</label>
-                    <input type="email"  required="true" name="email" id="email"  placeholder="Digite seu e-mail">
+                    <input type="email" required="true" name="email" id="email" placeholder="Digite seu e-mail">
                 </div>
-                <div class="formField">
+                <div class="campo-formulario">
                     <label>Senha</label>
-                    <input type="password"  required="true" name="senha" id="senha"  placeholder="Digite sua senha">
+                    <input type="password" required="true" name="senha" id="senha" placeholder="Digite sua senha">
                 </div>
-                <div class="formField">
+                <div class="campo-formulario">
                     <label>Confirmar senha</label>
-                    <input type="password" required="true"  name="confirmar" id="confirmar" placeholder="Digite novamente a sua senha"> <br>
+                    <input type="password" required="true" name="confirmar" id="confirmar"
+                        placeholder="Digite novamente a sua senha"> <br>
                 </div>
-                <input type="submit" value="Continuar">
+                <input id="botao" type="submit" value="Continuar">
             </form>
         </div>
-        <div class="fazerLogin">
-            <p>Já tem cadastro?<a href="{% url 'cliente:login' %}"> Faça login</a></p>
+        <div>
+            <label class="textinho">Já tem cadastro? <a href="{% url 'cliente:login' %}">Faça login!</a></label><br>
+            <label class="textinho">Deseja voltar para a tela inicial? <a href="{% url 'loja:inicio' %}">Voltar</a> </label>
         </div>
     </div>
+
+
 </body>
+
 </html>
