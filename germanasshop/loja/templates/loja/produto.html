@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nome do produto</title>
+    <title>{{produto.nome}}</title>
 </head>
 
 <body style="margin:0; padding:0; border:0;">
@@ -49,20 +49,17 @@
                     <p style="padding-top: 20px; float: left; font-family:Arial; font: weight 600px; font-size:18px;">
                         Favoritar</p>
                 </div>
-                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1631652956000"
+                <img src= {{produto.url_imagem}}
                     style="max-height:800px; padding: 10px; float: left">
             </div>
             <div style="justify-content: start; display: flex; flex-direction: column;">
-                <p style="padding-top: 20px; float: left; font-family:Arial; font-weight: bold; font-size:30px;">iPhone
+                <p style="padding-top: 20px; float: left; font-family:Arial; font-weight: bold; font-size:30px;">
+                    {{produto.nome}}
                 </p>
                 <p
                     style="padding-top: 20px; float: left; font-family:Arial; font-weight: 400 ; font-size:15px; text-align: justify;">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    {{ produto.descricao }}    
+                </p>
             </div>
         </div>
         <div style="width: 250px;">
@@ -70,7 +67,7 @@
         </div>
         <div style="justify-content: start; display: flex; flex-direction: column; width: 1400px; padding-right: 50px;">
             <p style="padding-top: 20px; float: left; font-family:Arial; font: weight 600px; font-size:20px;">R$
-                5.741,01</p>
+                {{produto.preco}}</p>
             <p style="padding-top: 20px; float: left; font-family:Arial; font: weight 600px; font-size:15px;">Vc não tem
                 dinheiro para comprar esse produto!</p>
             <input type="submit" value="Comprar"

@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/inicial.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+    </style>
+    <title>
+        Germana's Shop
+    </title>
+</head>
+
+<body>
+    <div id="Barra">
+
+        <img id="logo" src="{% static 'img/Logo.png' %}" alt="">
+
+        <a href="/cesta/">
+            <img id="cesta" src="{% static 'img/cesta.png' %}" alt="">
+        </a>
+        <a href="{% url 'cliente:cadastro' %}">
+            <img id="usuario" src="{% static 'img/usuario.png' %}" alt="">
+        </a>
+        <a href="/forum/">
+            <img id="forum" src="{% static 'img/Forum.png' %}" alt="">
+        </a>
+    </div>
+    <div id="seção">
+        <h1>SEÇÂO 1</h1>
+        <div id="produtos">
+            <ul>
+                <li>
+                    {% for produto in produtos %}
+                    <a href= "produto/{{  produto.pk  }}/" >
+                        <div id="produto">
+                            <img id="capa" src={{ produto.url_imagem }}>
+                            <h3>{{produto.nome}}</h3>
+                            <h2>R$ {{produto.preco}}</h2>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

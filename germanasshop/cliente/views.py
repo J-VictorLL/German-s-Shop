@@ -56,21 +56,18 @@ def cadastro(request):
     #             print(nome, email, senha)
     #     return render(request, 'cadastro/erro.html')
     
-# def login(request):
-#     try:
-#         email = request.POST['email']
-#         senha = request.POST['senha']
-#     except (KeyError, Cadastro.DoesNotExist):
-#         return render(request, 'cadastro/login.html')
-#     else:
-#         cadastros = list(Cadastro.objects.order_by('-email'))
-#         cadastrado = False
-#         for cadastro in cadastros:
-#             if cadastro.email == email:
-#                 if cadastro.senha == senha:
-#                     cadastrado = True
+def login(request):
+    try:
+        email = request.POST['email']
+        senha = request.POST['senha']
+    except (KeyError):
+        return render(request, 'cadastro/login.html')
+    else:
+        cadastros = list(Cadastro.objects.order_by('-email'))
+        cadastrado = False
+        for cadastro in cadastros:
+            if cadastro.email == email:
+                if cadastro.senha == senha:
+                    cadastrado = True
         
-#         return render(request, 'cadastro/erro.html') if cadastrado else render(request, 'cadastro/cadastro.html')
-
-# def produto(request):
-#     return render(request, 'cadastro/produto.html')
+        return render(request, 'cadastro/erro.html') if cadastrado else render(request, 'cadastro/cadastro.html')
