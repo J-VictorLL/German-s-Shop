@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from matplotlib.style import context
 from cliente.models import Cliente
 from .models import Produto, Reclamacao
+from django.contrib.auth.models import User
 
 
 class Secao:
@@ -22,7 +23,13 @@ def index(request):
             for secao in secoes:
                 if secao.titulo == produto.categoria:
                     secao.lista_produtos.append(produto)
-    context = {'secoes': secoes}
+    autenticado = False
+    user = None
+    if request.session.get('id_usuario', False):
+        autenticado = True
+        user = get_object_or_404(User, pk=request.session['id_usuario'])
+        print(request.session['id_usuario'])
+    context = {'secoes': secoes, 'autenticado':autenticado, 'user':user}
     return render(request, 'loja/index.html', context)
 
 

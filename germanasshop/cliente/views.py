@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from .models import Cliente
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
 
 # def index(request):
 #     latest_question_list = Question.objects.order_by('-pub_date')[:5]
@@ -52,22 +53,23 @@ def cadastro(request):
         if(nome != '' and cpf  != '' and email != ''):
             if(senha == confirmar):
                 c = Cliente(cpf=cpf, nome=nome, email=email, senha=senha)
+                #create_user(username, email=None, password=None, **extra_fields)
+                user = User.objects.create_user(nome, email=email, password=senha)
+                user.save()
+                #UserManager.create_user(nome, email=email, password=senha)
                 c.save()
                 print(nome, email, senha)
         return render(request, 'cadastro/login.html')
     
 def login(request):
     try:
-        email = request.POST['email']
+        nome = request.POST['nome']
         senha = request.POST['senha']
     except (KeyError):
         return render(request, 'cadastro/login.html')
     else:
-        cadastros = list(Cliente.objects.order_by('-email'))
-        cadastrado = False
-        for cadastro in cadastros:
-            if cadastro.email == email:
-                if cadastro.senha == senha:
-                    cadastrado = True
+        user = authenticate(username=nome, password=senha)
+        request.session['id_usuario'] = user.id
+        return render(request, 'cadastro/carregando.html') if user is not None else render(request, 'cadastro/erro.html')
         
-        return render(request, 'cadastro/carregando.html') if cadastrado else render(request, 'cadastro/cadastro.html')
+        
