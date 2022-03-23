@@ -2,33 +2,6 @@ body{
     margin: 0%;
     background-color: #F5F5F5;
 }
-#barra{
-    background-color: #FFC8CA;
-    height: 80px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-#logo{
-    max-height: 50px;
-}
-#opcoes{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 400px;
-}
-#forum{
-    max-height: 35px;
-}
-#usuario{
-    max-height: 50px;
-}
-#cesta{
-    max-height: 35px;
-}
 
 .secao{
     background-color: #F5F5F5;

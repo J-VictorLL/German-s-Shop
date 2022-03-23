@@ -1,8 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         {%load static%}
         <link rel="stylesheet" href="{% static 'css/cesta.css' %}">
+        <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
         </style>
@@ -11,23 +13,7 @@
         </title>
     </head>
     <body>
-        <div id="barra">
-
-            <img id="logo" src="{% static 'img/Logo.png' %}" alt="">
-    
-            <div id="opcoes">
-                <a href="{% url 'cliente:cadastro' %}">
-                    <img id="usuario" src="{% static 'img/usuario.png' %}" alt="">
-                </a>
-                <a href="/forum/">
-                    <img id="forum" src="{% static 'img/Forum.png' %}" alt="">
-                </a>
-                <a href="/cesta/">
-                    <img id="cesta" src="{% static 'img/cesta.png' %}" alt="">
-                </a>
-            </div>
-    
-        </div>
+        {% include 'loja/navbar.html' %}
         <h1>Minha cesta</h1>
         <div>
             <h2>Produto</h2><h2 style="padding-left: 28%;">Quantidade</h2><h2 style="padding-left: 7%;" >Preço</h2>

@@ -1,9 +1,10 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     {%load static%}
     <link rel="stylesheet" href="{% static 'css/inicial.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
     </style>
@@ -11,30 +12,14 @@
         Germana's Shop
     </title>
 </head>
-
 <body>
-    <div id="barra">
-
-        <img id="logo" src="{% static 'img/Logo.png' %}" alt="">
-
-        <div id="opcoes">
-            <a href="{% url 'cliente:cadastro' %}">
-                <img id="usuario" src="{% static 'img/usuario.png' %}" alt="">
-            </a>
-            <a href="/forum/">
-                <img id="forum" src="{% static 'img/Forum.png' %}" alt="">
-            </a>
-            <a href="/cesta/">
-                <img id="cesta" src="{% static 'img/cesta.png' %}" alt="">
-            </a>
-        </div>
-
-    </div>
+    {% include 'loja/navbar.html' %}
+    {% for secao in secoes%}
     <div class="secao">
-        <h1 class="titulo-secao">Smartphones</h1>
+        <h1 class="titulo-secao">{{secao.titulo}}</h1>
         <ul>
             <li class="item-produtos">
-                {% for produto in produtos %}
+                {% for produto in secao.lista_produtos %}
                 <a href="produto/{{  produto.pk  }}/">
                     <div class="produto">
                         <img id="capa" src={{ produto.url_imagem }}>
@@ -46,23 +31,6 @@
             </li>
         </ul>
     </div>
-    <div class="secao">
-        <h1 class="titulo-secao">Smartphones</h1>
-        <ul>
-            <li class="item-produtos">
-                {% for produto in produtos %}
-                <a href="produto/{{  produto.pk  }}/">
-                    <div class="produto">
-                        <img id="capa" src={{ produto.url_imagem }}>
-                        <h1>{{produto.nome}}</h1>
-                        <h2>R$ {{produto.preco}}</h2>
-                    </div>
-                </a>
-                {% endfor %}
-            </li>
-        </ul>
-    </div>
-
+    {% endfor %}
 </body>
-
 </html>

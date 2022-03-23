@@ -2,7 +2,7 @@ import datetime
 import email
 from django.db import models
 from django.utils import timezone
-
+from django.contrib.auth.models import User
 
 
 # class Question(models.Model):
@@ -37,3 +37,6 @@ class Cliente(models.Model):
         return self.objects.all()
     def get_client_by_id(self, client_id):
         return self.objects.get(id=client_id)
+
+class Usuario(User):
+    cpf = models.CharField(max_length=11,primary_key=True)

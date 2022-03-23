@@ -1,33 +1,11 @@
 body{
     margin: 0%;
-}
-#barra{
-    background-color: #FFC8CA;
-    height: 80px;
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
 }
-#logo{
-    max-height: 50px;
-}
-#opcoes{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 400px;
-}
-#forum{
-    max-height: 35px;
-}
-#usuario{
-    max-height: 50px;
-}
-#cesta{
-    max-height: 35px;
-}
+
 h1{
     font-family: 'Dosis', sans-serif;
     font-size: 48px;
@@ -38,16 +16,33 @@ h1{
     color: #000000;
 }
 #questionario{
+    width: 500px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-#pergunta{
-    width: 700px;
+#titulo{
+    width: 100%;
+    margin-bottom: 15px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #888888;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#reclamacao{
+    width: 100%;
     height: 120px;
     padding: 10px;
-    border: none;
-    outline: none;
-    background: #F9C2C4;
-    border-radius: 13px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #888888;
+    background: white;
+    border-radius: 10px;
 }
 #enviar{
     margin-top: 30px;
@@ -70,7 +65,7 @@ h1{
 }
 
 hr{
-    margin: 20px;
+    margin: 10px;
 }
 
 #item{
@@ -97,4 +92,10 @@ p{
     font-weight: 700;
 }
 
-
+.textinho{
+    font-family: 'Dosis', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    color: #000;
+}

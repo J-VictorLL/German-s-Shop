@@ -5,41 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <title>{{produto.nome}}</title>
 </head>
 
 <body style="margin:0; padding:0; border:0;">
-    <div id="barra"
-        style="height: 70px; background-color: #FFC8CA; justify-content: space-between; display: flex; flex-direction: row;">
-        <div>
-            <img src="https://images.vexels.com/media/users/3/200058/isolated/lists/faf7d0a5f261efe8d8656e9931d16ce3-icone-de-sacola-de-compras-rosa.png"
-                style="max-height:50px; padding: 10px; float: left">
-            <p style="padding-top: 5px; float: left; font-family:Arial; font: weight 600px; font-size:20px;">Germana's
-                Shop</p>
-        </div>
-        <div style="justify-content: space-between; display: flex; flex-direction: row; width: 500px;">
-            <div>
-                <img src="https://images.vexels.com/media/users/3/128623/isolated/lists/442e9dc361fddd070a9b2c46e8868480-linha-vermelha-da-bolha-do-usuario-icon-svg.png"
-                    style="max-height:40px; padding: 10px; float: left">
-                <p style="padding-top: 5px; float: left; font-family:Arial; font: weight 600px; font-size:20px;">Fórum
-                </p>
-            </div>
-            <div>
-                <img src="https://images.vexels.com/media/users/3/127916/isolated/lists/0670ce3628278f83bac514e09e1e1b39-linha-verde-do-usuario-icon2-svg.png"
-                    style="max-height:40px; padding: 10px; float: left">
-                <p style="padding-top: 5px; float: left; font-family:Arial; font: weight 600px; font-size:20px;">Usuário
-                </p>
-            </div>
-            <div>
-                <img src="https://images.vexels.com/media/users/3/201148/isolated/lists/6155b6626b74632fff2cd5771b2d588a-carrinho-de-compras-na-bolha-da-conversa.png"
-                    style="max-height:40px; padding: 10px; float: left">
-                <p
-                    style="padding-top: 5px; float: left; font-family:Arial; font: weight 600px; font-size:20px; padding-right: 30px;">
-                    Carrinho
-                </p>
-            </div>
-        </div>
-    </div>
+    {% include 'loja/navbar.html' %}
     <div style="justify-content: space-between; display: flex; flex-direction: row;">
         <div style="justify-content: space-between; display: flex; flex-direction: row;">
             <div style="justify-content: space-between; display: flex; flex-direction: column;">

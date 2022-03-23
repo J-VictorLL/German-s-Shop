@@ -1,9 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     {%load static%}
     <link rel="stylesheet" href="{% static 'css/forum.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
     </style>
@@ -13,40 +15,36 @@
 </head>
 
 <body>
-    <div id="barra">
-
-        <img id="logo" src="{% static 'img/Logo.png' %}" alt="">
-
-        <div id="opcoes">
-            <a href="{% url 'cliente:cadastro' %}">
-                <img id="usuario" src="{% static 'img/usuario.png' %}" alt="">
-            </a>
-            <a href="/forum/">
-                <img id="forum" src="{% static 'img/Forum.png' %}" alt="">
-            </a>
-            <a href="/cesta/">
-                <img id="cesta" src="{% static 'img/cesta.png' %}" alt="">
-            </a>
+    {% include 'loja/navbar.html' %}
+    <form method="post">
+        {% csrf_token %}
+        <div id="questionario">
+            <h1>Qual a sua reclamação/sugestão?</h1>
+            <input id="titulo" name="titulo" type="text" placeholder="Título">
+            <textarea id="reclamacao" type="text" name="reclamacao" placeholder="Conte-nos sobre..."></textarea> <br>
+            <button id="enviar" type="submit">Enviar</button>
         </div>
-
-    </div>
-    <div id="questionario">
-        <h1>Qual a sua reclamação/sugestão?</h1>
-        <textarea id="pergunta" type="text" name="pergunta" placeholder="Conte-no sobre..."></textarea> <br>
-        <button id="enviar">Enviar</button>
-    </div>
+    </form>
     <hr>
     <div id="perguntas_e_respostas">
+        {% for reclamacao in reclamacoes %}
         <div id="item">
-            <h2>pergunta</h2>
-            <h3>feita dia 22/22/2222</h3>
+            <h2>{{reclamacao.titulo}}</h2>
+            <h3>feita dia {{reclamacao.data_pergunta}}</h3>
+            <p class="textinho">
+                {{reclamacao.reclamação}}
+            </p>
+            {% if reclamacao.resposta %}
             <div id="campo">
-                <p>responta
-                    sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+                <p>
+                    {{reclamacao.resposta}}
                 </p>
-                <h3 style="margin-left: 10px;padding: 10px;">respondido dia 23/22/2222</h3>
+                <h3 style="margin-left: 10px;padding: 10px;">respondido dia {{reclamacao.data_resposta}}</h3>
             </div>
+            {% endif %}
         </div>
+        <hr>
+        {% endfor %}
     </div>
 </body>
 

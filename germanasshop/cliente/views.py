@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from .models import Cliente
-
+from django.contrib.auth.models import User
 
 # def index(request):
 #     latest_question_list = Question.objects.order_by('-pub_date')[:5]
@@ -38,23 +38,23 @@ from .models import Cliente
 
 
 def cadastro(request):
-    return render(request,'cadastro/cadastro.html')
-    # cadastro = get_object_or_404(Cadastro)
-    # try:
-    #     nome = request.POST['nome']
-    #     cpf = request.POST['cpf']
-    #     email = request.POST['email']
-    #     senha = request.POST['senha']
-    #     confirmar = request.POST['confirmar']
-    # except (KeyError, Customer.DoesNotExist):
-    #     return render(request, 'cadastro/cadastro.html')
-    # else:
-    #     if(nome != '' and cpf  != '' and email != ''):
-    #         if(senha == confirmar):
-    #             c = Customer(cpf=cpf, nome=nome, email=email, senha=senha)
-    #             c.save()
-    #             print(nome, email, senha)
-    #     return render(request, 'cadastro/erro.html')
+    #return render(request,'cadastro/cadastro.html')
+    #cadastro = get_object_or_404(Cadastro)
+    try:
+        nome = request.POST['nome']
+        cpf = request.POST['cpf']
+        email = request.POST['email']
+        senha = request.POST['senha']
+        confirmar = request.POST['confirmar']
+    except (KeyError):
+        return render(request, 'cadastro/cadastro.html')
+    else:
+        if(nome != '' and cpf  != '' and email != ''):
+            if(senha == confirmar):
+                c = Cliente(cpf=cpf, nome=nome, email=email, senha=senha)
+                c.save()
+                print(nome, email, senha)
+        return render(request, 'cadastro/login.html')
     
 def login(request):
     try:
@@ -63,11 +63,11 @@ def login(request):
     except (KeyError):
         return render(request, 'cadastro/login.html')
     else:
-        cadastros = list(Cadastro.objects.order_by('-email'))
+        cadastros = list(Cliente.objects.order_by('-email'))
         cadastrado = False
         for cadastro in cadastros:
             if cadastro.email == email:
                 if cadastro.senha == senha:
                     cadastrado = True
         
-        return render(request, 'cadastro/erro.html') if cadastrado else render(request, 'cadastro/cadastro.html')
+        return render(request, 'cadastro/carregando.html') if cadastrado else render(request, 'cadastro/cadastro.html')
