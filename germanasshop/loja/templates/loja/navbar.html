@@ -1,0 +1,17 @@
+{%load static%}
+<div id="barra">
+    <a href="{% url 'loja:inicio' %}">
+        <img id="logo" src="{% static 'img/Logo.png' %}" alt="">
+    </a>
+    <div id="opcoes">
+        <a href="{% url 'cliente:cadastro' %}">
+            <img id="usuario" src="{% static 'img/usuario.png' %}" alt="">
+        </a>
+        <a href="/forum/">
+            <img id="forum" src="{% static 'img/Forum.png' %}" alt="">
+        </a>
+        <a href="/cesta/">
+            <img id="cesta" src="{% static 'img/cesta.png' %}" alt="">
+        </a>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <title>{{produto.nome}}</title>
+</head>
+
+<body style="margin:0; padding:0; border:0;">
+    {% include 'loja/navbar.html' %}
+    <div style="justify-content: space-between; display: flex; flex-direction: row;">
+        <div style="justify-content: space-between; display: flex; flex-direction: row;">
+            <div style="justify-content: space-between; display: flex; flex-direction: column;">
+                <div>
+                    <img src="https://images.vexels.com/media/users/3/201001/isolated/lists/fff908e201cc5de6052984723b33b093-balao-de-coracao-em-conversa.png"
+                        style="max-height:30px; padding-top: 30px; padding-left: 30px; padding-right: 15px ; float: left">
+                    <p style="padding-top: 20px; float: left; font-family:Arial; font: weight 600px; font-size:18px;">
+                        Favoritar</p>
+                </div>
+                <img src= {{produto.url_imagem}}
+                    style="max-height:800px; padding: 10px; float: left">
+            </div>
+            <div style="justify-content: start; display: flex; flex-direction: column;">
+                <p style="padding-top: 20px; float: left; font-family:Arial; font-weight: bold; font-size:30px;">
+                    {{produto.nome}}
+                </p>
+                <p
+                    style="padding-top: 20px; float: left; font-family:Arial; font-weight: 400 ; font-size:15px; text-align: justify;">
+                    {{ produto.descricao }}    
+                </p>
+            </div>
+        </div>
+        <div style="width: 250px;">
+
+        </div>
+        <div style="justify-content: start; display: flex; flex-direction: column; width: 1400px; padding-right: 50px;">
+            <p style="padding-top: 20px; float: left; font-family:Arial; font: weight 600px; font-size:20px;">R$
+                {{produto.preco}}</p>
+            <p style="padding-top: 20px; float: left; font-family:Arial; font: weight 600px; font-size:15px;">Vc não tem
+                dinheiro para comprar esse produto!</p>
+            <input type="submit" value="Comprar"
+                style="background-color: #1A659E; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; border-radius: 8px; width: 100%; margin-top: 15px; font-size: 20px;">
+        </div>
+    </div>
+</body>
+
+</html>

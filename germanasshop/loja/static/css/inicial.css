@@ -1,0 +1,93 @@
+body{
+    margin: 0%;
+    background-color: #F5F5F5;
+}
+
+.secao{
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+}
+
+.secao ul{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.secao ul li{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.titulo-secao{
+    font-family: 'Dosis', sans-serif;
+    font-style: normal;
+    font-weight: bolder;
+    margin-left: 10px;
+    font-size: 50px;
+    color: black;
+}
+
+.produto{
+    background-color: white;
+    height: 450px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 3px 3px 10px #888888;
+    border-radius: 10px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+}
+
+.produto:hover{
+    background-color: #F9595F;
+    height: 450px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 3px 3px 10px #888888;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+
+.produto img{
+    height: 200px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.produto h1{
+    float:left;
+    font-size: 20px;
+    color: #9F9F9F;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+.produto h1:hover{
+    float:left;
+    font-size: 20px;
+    color: #222020;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-family: sans-serif;
+}
+
+.produto h2{
+    float:left;
+    font-family: sans-serif;
+    color: black;
+    margin-right: 10px;
+    margin-left: 10px;
+}

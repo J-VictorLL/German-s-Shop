@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/inicial.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+    </style>
+    <title>
+        Germana's Shop
+    </title>
+</head>
+<body>
+    {% include 'loja/navbar.html' %}
+    {% for secao in secoes%}
+    <div class="secao">
+        <h1 class="titulo-secao">{{secao.titulo}}</h1>
+        <ul>
+            <li class="item-produtos">
+                {% for produto in secao.lista_produtos %}
+                <a href="produto/{{  produto.pk  }}/">
+                    <div class="produto">
+                        <img id="capa" src={{ produto.url_imagem }}>
+                        <h1>{{produto.nome}}</h1>
+                        <h2>R$ {{produto.preco}}</h2>
+                    </div>
+                </a>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+    {% endfor %}
+</body>
+</html>

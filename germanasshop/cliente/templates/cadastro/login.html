@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script>
+        function newPopup() {
+            alert("Um e-mail foi enviado para o e-mail cadastrado! Verifique sua caixa de e-mail.")
+        }
+    </script>
+</head>
+
+<body>
+    <div id="direita">
+        <div id="container-form">
+            <img id="logo" src="{% static 'img/logo-login.png' %}" alt="">
+            <h1 class="titulo">Faça seu login</h1>
+            <div class="formulario">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="campo-formulario">
+                        <label>E-mail</label>
+                        <input type="email" required="true" name="email" id="email" placeholder="Digite seu e-mail">
+                    </div>
+                    <div class="campo-formulario">
+                        <label>Senha</label>
+                        <input type="password" required="true" name="senha" id="senha" placeholder="Digite sua senha">
+                    </div>
+                    <input id="botao" type="submit" value="Continuar">
+                </form>
+            </div>
+            <div>
+                <label class="textinho">Não tem cadastro? <a href="{% url 'cliente:cadastro' %}">Cadastre-se!</a></label><br>
+                <label class="textinho">Deseja voltar para a tela inicial? <a href="{% url 'loja:inicio' %}">Voltar</a> </label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+body{
+    margin: 0%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    font-family: 'Dosis', sans-serif;
+    font-size: 48px;
+    line-height: 10px;
+    padding-left: 10px;
+    font-weight: 300;
+    line-height: 51px;
+    color: #000000;
+}
+#questionario{
+    width: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#titulo{
+    width: 100%;
+    margin-bottom: 15px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #888888;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#reclamacao{
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #888888;
+    background: white;
+    border-radius: 10px;
+}
+#enviar{
+    margin-top: 30px;
+    width: 182px;
+    height: 56px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Dosis', sans-serif;
+    font-size: 30px;
+    background-color: #F9595F;
+}
+
+#enviar:hover{
+    box-shadow: 0px 0px 10px 1px rgb(66, 66, 66);
+}
+
+#enviar:active{
+    box-shadow: 0px 0px 0px 0px rgb(66, 66, 66);
+}
+
+hr{
+    margin: 10px;
+}
+
+#item{
+    margin: 1%;
+    font-family: 'Dosis', sans-serif;
+}
+h3{
+    color: rgb(107, 107, 107);
+    margin-top: -20px;
+}
+#campo{
+    height: auto;
+    overflow-wrap: break-word;
+    line-break: strict;
+    width: 98%;
+    background-color: #F8F8F8;
+    border-left: 5px solid #666666;
+}
+p{
+    padding: 10px;
+    margin-left: 10px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.textinho{
+    font-family: 'Dosis', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    color: #000;
+}
