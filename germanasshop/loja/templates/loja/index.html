@@ -14,6 +14,20 @@
 </head>
 <body>
     {% include 'loja/navbar.html' %}
+    
+    <div style="height:30px; display: flex; justify-content: end; align-items: flex-end; background-color: #FFC8CA; border-radius: 0px 0px 10px 10px;">
+        <p style="font-family: 'Dosis', sans-serif; font-size: 20px; line-height: 10px; padding-right: 30px; color: #000000;">
+            {% if autenticado %}
+                Seja bem-vindo(a) {{user.username}} <a style="font-family: 'Dosis', sans-serif; font-size: 20px; line-height: 10px; color: #F9595F;" href="">SAIR</a>
+            {% else %}
+                Não está logado
+            {% endif %}
+        </p>
+        
+        
+    </div>
+       
+    
     {% for secao in secoes%}
     <div class="secao">
         <h1 class="titulo-secao">{{secao.titulo}}</h1>
