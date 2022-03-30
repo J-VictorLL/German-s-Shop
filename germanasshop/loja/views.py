@@ -17,6 +17,7 @@ def index(request):
     for produto in produtos:
         nomes_secoes = [secao.titulo for secao in secoes]
         if not produto.categoria in nomes_secoes:
+            print(produto.pk)
             secoes.append(Secao(titulo=produto.categoria,
                           lista_produtos=[produto]))
         else:
@@ -29,8 +30,13 @@ def index(request):
         autenticado = True
         user = get_object_or_404(User, pk=request.session['id_usuario'])
         print(request.session['id_usuario'])
+        lista_favoritos = []
         favoritos = Favorito.objects.order_by('data_adicao')
-        secoes.insert(0, Secao(titulo='Favoritos', lista_produtos=[]))
+        for favorito in favoritos:
+            if favorito.id_usuario.username == user.username:
+                produto_aux = get_object_or_404(Produto, pk=favorito.id_produto.pk)
+                lista_favoritos.append(produto_aux)
+        secoes.insert(0, Secao(titulo='Seus favoritos', lista_produtos=lista_favoritos))
     context = {'secoes': secoes, 'autenticado':autenticado, 'user':user}
     return render(request, 'loja/index.html', context)
 
