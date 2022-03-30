@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from matplotlib.style import context
 from cliente.models import Cliente
-from .models import Produto, Reclamacao
+from .models import Favorito, Produto, Reclamacao
 from django.contrib.auth.models import User
 
 
@@ -29,6 +29,7 @@ def index(request):
         autenticado = True
         user = get_object_or_404(User, pk=request.session['id_usuario'])
         print(request.session['id_usuario'])
+        favoritos = Favorito.objects.order_by('data_adicao')
         secoes.insert(0, Secao(titulo='Favoritos', lista_produtos=[]))
     context = {'secoes': secoes, 'autenticado':autenticado, 'user':user}
     return render(request, 'loja/index.html', context)
