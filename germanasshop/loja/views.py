@@ -14,6 +14,7 @@ class Secao:
 def index(request):
     produtos = Produto.objects.all()
     secoes = []
+    secoes.append(Secao(titulo='Favoritos', lista_produtos=[]))
     for produto in produtos:
         nomes_secoes = [secao.titulo for secao in secoes]
         if not produto.categoria in nomes_secoes:
