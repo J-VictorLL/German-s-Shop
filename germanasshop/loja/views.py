@@ -14,7 +14,6 @@ class Secao:
 def index(request):
     produtos = Produto.objects.all()
     secoes = []
-    secoes.append(Secao(titulo='Favoritos', lista_produtos=[]))
     for produto in produtos:
         nomes_secoes = [secao.titulo for secao in secoes]
         if not produto.categoria in nomes_secoes:
@@ -30,6 +29,7 @@ def index(request):
         autenticado = True
         user = get_object_or_404(User, pk=request.session['id_usuario'])
         print(request.session['id_usuario'])
+        secoes.insert(0, Secao(titulo='Favoritos', lista_produtos=[]))
     context = {'secoes': secoes, 'autenticado':autenticado, 'user':user}
     return render(request, 'loja/index.html', context)
 
