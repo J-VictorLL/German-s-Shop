@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from matplotlib.style import context
-from .models import Produto, Reclamacao
+from .models import Produto, Reclamacao,Carrinho
 from django.contrib.auth.models import User
 
 
@@ -51,11 +51,28 @@ def forum(request):
 
 
 def cesta(request):     
-    if not request.session.get('id_usuario', False):
-       return render(request,'cadastro/login.html')
-    print(request.session)
-    return render(request, 'loja/cesta.html')
-
+    if  request.session.get('id_usuario', False):
+        user = get_object_or_404(User, pk=request.session['id_usuario'])
+        carrinho = Carrinho.objects.all() 
+        lista_produtos = []
+        
+        for items in carrinho:
+            if items.id_usuario.username == user.username:
+                produto_aux = get_object_or_404(Produto, pk=items.id_produto.pk)
+                lista_produtos.append(produto_aux)
+        context = {'lista_produtos':lista_produtos}
+        return render(request, 'loja/cesta.html',context)
+    return render(request,'cadastro/login.html') 
+     
+def cadastro_produto(request,id_produto):
+    if request.session.get('id_usuario', False):
+         produto = get_object_or_404(Produto, pk=id_produto)
+         user = get_object_or_404(User, pk=request.session['id_usuario'])
+         C = Carrinho(id_produto=produto, id_usuario = user,quantidade=1)
+         C.save()
+         context= {'id_produto':id_produto}
+         return render(request, 'loja/cesta.html')
+    return render(request,'cadastro/login.html')
 
 def produto(request, id_produto):
     produto = get_object_or_404(Produto, pk=id_produto)

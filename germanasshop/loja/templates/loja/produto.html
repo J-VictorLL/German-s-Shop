@@ -42,11 +42,10 @@
             <p style="padding-top: 20px; float: left; font-family:Arial; font: weight 600px; font-size:20px;">Valor do produto: R$
                 {{produto.preco}}</p>
                
-                <form method="post" action="{% url 'loja:cesta' %}">
-                {% csrf_token %}
-                <input type="submit" value="Adicionar ao carrinho" 
-                    style="background-color: #1A659E; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; border-radius: 8px; width: 100%; margin-top: 15px; font-size: 20px;">
-                </form>
+                <a href="cadastrar/">
+                    <input type="submit" value="Adicionar ao carrinho" 
+                        style="background-color: #1A659E; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; border-radius: 8px; width: 100%; margin-top: 15px; font-size: 20px;">
+                </a>
                 
         </div>
     </div>
