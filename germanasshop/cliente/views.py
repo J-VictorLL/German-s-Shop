@@ -2,7 +2,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
-from .models import Cliente
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
@@ -52,7 +51,7 @@ def cadastro(request):
     else:
         if(nome != '' and cpf  != '' and email != ''):
             if(senha == confirmar):
-                c = Cliente(cpf=cpf, nome=nome, email=email, senha=senha)
+              
                 #create_user(username, email=None, password=None, **extra_fields)
                 user = User.objects.create_user(nome, email=email, password=senha)
                 user.save()

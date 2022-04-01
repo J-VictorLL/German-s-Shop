@@ -12,6 +12,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
     </style>
     <title>{{produto.nome}}</title>
+    
 </head>
 
 <body>
@@ -49,7 +50,10 @@
                 {{produto.preco}}</p>
             <p id="descricao_preco">Vc não tem
                 dinheiro para comprar esse produto!</p>
-            <input id="botao" type="submit" value="Comprar">
+                <a href="cadastrar/">
+                    <input type="submit" value="Adicionar ao carrinho" 
+                        style="background-color: #1A659E; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; border-radius: 8px; width: 100%; margin-top: 15px; font-size: 20px;">
+                </a>
         </div>
     </div>
     </div>
