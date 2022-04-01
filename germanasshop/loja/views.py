@@ -60,3 +60,7 @@ def produto(request, id_produto):
     context = {}
     context['produto'] = produto
     return render(request, 'loja/produto.html', context)
+
+
+def historico(request):
+    return render(request, 'loja/historico.html')
