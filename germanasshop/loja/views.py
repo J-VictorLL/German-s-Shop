@@ -17,7 +17,6 @@ def index(request):
     for produto in produtos:
         nomes_secoes = [secao.titulo for secao in secoes]
         if not produto.categoria in nomes_secoes:
-            print(produto.pk)
             secoes.append(Secao(titulo=produto.categoria,
                           lista_produtos=[produto]))
         else:
