@@ -1,6 +1,8 @@
 from datetime import datetime
 from django.db import models
 
+from django.contrib.auth.models import User
+
 class Produto(models.Model):
     nome = models.CharField('Nome', max_length=100)
     preco = models.DecimalField('Preço', max_digits=7, decimal_places=2)
@@ -9,7 +11,7 @@ class Produto(models.Model):
     categoria = models.CharField('Categoria', max_length=50)
 
     def __str__(self):
-        return str(self.pk) + ' ' + self.nome
+        return str(self.pk)# + ' ' + self.nome
 
 class Reclamacao(models.Model):
     titulo = models.CharField('Título', max_length=100)
@@ -20,3 +22,11 @@ class Reclamacao(models.Model):
 
     def __str__(self):
         return str(self.pk) + ' ' + self.titulo
+
+class Favorito(models.Model):
+    id_usuario = models.ForeignKey(User, on_delete = models.CASCADE)
+    id_produto = models.ForeignKey(Produto, on_delete = models.CASCADE)
+    data_adicao = models.DateTimeField('Data da Adição na lista',default=datetime.now())
+    #Como juntar as duas chaves pra não haver repetição
+    def __str__(self):
+        return str(self.id_usuario) + ' favoritou ' + str(self.id_produto)

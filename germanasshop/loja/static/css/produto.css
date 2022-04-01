@@ -1,0 +1,121 @@
+body{
+    margin: 0%;
+    }
+
+#botao {
+    background-color: #1A659E;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+    width: 100%;
+    width: 200px;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+#h1 {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    padding-left : 10px;
+    padding-right: 10px;
+}
+
+#h2 {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    }
+
+#h3 {
+    justify-content: start;
+    text-align: justify;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+    padding-right: 30px;
+}
+
+#h4 {
+    justify-content: start;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    width: 1400px;
+    padding-right: 50px;
+    }
+
+#h5 {
+    width: 100%;
+    padding: 20px;
+   
+}
+
+#h6{
+    width: 100%;
+    
+}
+
+#img_fav {
+    max-height:30px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 15px;
+    float: left;
+}
+
+#Fav{
+    padding-top: 20px;
+    float: left;
+    font-family:Arial;
+    font: weight 600px;
+    font-size:18px;
+}
+
+#img_produto{
+    width: 100%;
+    width: 400px;
+    max-height:800px;
+    padding: 10px;
+    
+}
+
+#descricao_nome {
+    padding-top: 20px;
+    float: left;
+    font-family:Arial;
+    font-weight: bold;
+    font-size:25px;
+}
+
+#descricao_produto{
+    padding-top: 20px;
+    float: left;
+    font-family:Arial;
+    font-weight: 400 ;
+    font-size:15px;
+    text-align: justify;
+    padding-right: 20px;
+}
+
+#produto_preco {
+    padding-top: 20px;
+    float: left;
+    font-family:Arial;
+    font: weight 600px;
+    font-size:20px;
+}
+
+#descricao_preco {
+    padding-top: 20px;
+    padding-right: 1200px;
+    float: left;
+    font-family:Arial;
+    font: weight 600px;
+    font-size:15px;
+}
