@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from matplotlib.style import context
-from .models import Produto, Reclamacao,Carrinho
+from .models import Carrinho, Favorito, Produto, Reclamacao
 from django.contrib.auth.models import User
 
 
@@ -28,6 +28,13 @@ def index(request):
         autenticado = True
         user = get_object_or_404(User, pk=request.session['id_usuario'])
         print(request.session['id_usuario'])
+        lista_favoritos = []
+        favoritos = Favorito.objects.order_by('data_adicao')
+        for favorito in favoritos:
+            if favorito.id_usuario.username == user.username:
+                produto_aux = get_object_or_404(Produto, pk=favorito.id_produto.pk)
+                lista_favoritos.append(produto_aux)
+        secoes.insert(0, Secao(titulo='Seus favoritos', lista_produtos=lista_favoritos))
     context = {'secoes': secoes, 'autenticado':autenticado, 'user':user}
     return render(request, 'loja/index.html', context)
 
@@ -79,3 +86,7 @@ def produto(request, id_produto):
     context = {}
     context['produto'] = produto
     return render(request, 'loja/produto.html', context)
+
+
+def historico(request):
+    return render(request, 'loja/historico.html')

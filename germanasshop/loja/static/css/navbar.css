@@ -15,7 +15,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 600px;
+    width: 600px;/*adicionar 150 qaundo colocar o historico*/
 }
 
 .linkopcoes{
@@ -42,5 +42,9 @@
     max-height: 50px;
 }
 #cesta{
+    max-height: 35px;
+}
+#historia{
+    padding: 20px;
     max-height: 35px;
 }

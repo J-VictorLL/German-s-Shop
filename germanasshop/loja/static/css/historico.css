@@ -1,0 +1,84 @@
+body{
+    margin: 0%;
+}
+h1{
+    color: #484848;
+}
+h2{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+hr{
+
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+#topo{
+    background-color: #FFC8CA;
+    width: 100%;
+    height: 80px;
+}
+
+.conteiner_historico{
+    font-family: 'Dosis', sans-serif;
+    height: auto;
+    width: 88%;
+    margin: 100px;
+}
+
+.compra_antiga{
+    height: auto;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #adadad;
+}
+
+.titular{
+    border-radius: 10px 10px 0px 0px;
+    height: auto;
+    width: 100%;
+    background-color: #FFC8CA;
+    display: flex;
+}
+
+
+.lista_produtos{
+    
+    border-radius: 0px 0px 10px 10px;
+    height: auto;
+    width: 100%;
+    background-color: #dfdfdf;
+}
+
+.dados_compra{
+    font-size: 10px;
+    margin-left: 30px;
+    margin-right: 10px;
+    margin-top: -10px;
+    text-align: center;
+    white-space: nowrap
+}
+#n_pedido{
+    margin-left: 72%;
+}
+
+.produto{
+    display: flex;
+    padding: 20px;
+}
+
+.produto img{
+    max-height: 100px;
+}
+
+.produto a{
+    padding: 2%;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
