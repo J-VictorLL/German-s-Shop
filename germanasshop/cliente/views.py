@@ -68,7 +68,10 @@ def login(request):
         return render(request, 'cadastro/login.html')
     else:
         user = authenticate(username=nome, password=senha)
-        request.session['id_usuario'] = user.id
-        return render(request, 'cadastro/carregando.html') if user is not None else render(request, 'cadastro/erro.html')
+        if user:
+            request.session['id_usuario'] = user.id
+            return render(request, 'cadastro/carregando.html')
+        return render(request, 'cadastro/erro.html')
+        
         
         
