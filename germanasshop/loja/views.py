@@ -1,6 +1,5 @@
 from django.shortcuts import get_object_or_404, render
 from matplotlib.style import context
-from cliente.models import Cliente
 from .models import Produto, Reclamacao
 from django.contrib.auth.models import User
 
@@ -51,7 +50,10 @@ def forum(request):
         return render(request, 'loja/forum.html', context)
 
 
-def cesta(request):
+def cesta(request):     
+    if not request.session.get('id_usuario', False):
+       return render(request,'cadastro/login.html')
+    print(request.session)
     return render(request, 'loja/cesta.html')
 
 
